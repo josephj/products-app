@@ -1,7 +1,8 @@
 {
-  "name": "josephj-cra-boilerplate",
+  "name": "products-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://josephj.github.io/product-list",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.1.0",
@@ -11,6 +12,7 @@
     "babel-jest": "23.6.0",
     "connected-react-router": "6.2.1",
     "enzyme": "3.8.0",
+    "gh-pages": "2.0.1",
     "history": "4.7.2",
     "jest": "23.6.0",
     "lodash.range": "3.2.0",
@@ -30,7 +32,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
