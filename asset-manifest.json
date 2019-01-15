@@ -1,13 +1,13 @@
 {
   "main.css": "/products-app/static/css/main.325a94dd.chunk.css",
-  "main.js": "/products-app/static/js/main.570c8a51.chunk.js",
-  "main.js.map": "/products-app/static/js/main.570c8a51.chunk.js.map",
+  "main.js": "/products-app/static/js/main.039ac498.chunk.js",
+  "main.js.map": "/products-app/static/js/main.039ac498.chunk.js.map",
   "static/js/1.2da80549.chunk.js": "/products-app/static/js/1.2da80549.chunk.js",
   "static/js/1.2da80549.chunk.js.map": "/products-app/static/js/1.2da80549.chunk.js.map",
   "runtime~main.js": "/products-app/static/js/runtime~main.eabc0d1e.js",
   "runtime~main.js.map": "/products-app/static/js/runtime~main.eabc0d1e.js.map",
   "static/css/main.325a94dd.chunk.css.map": "/products-app/static/css/main.325a94dd.chunk.css.map",
   "index.html": "/products-app/index.html",
-  "precache-manifest.a0068af3b2608238f8dda82ae342d649.js": "/products-app/precache-manifest.a0068af3b2608238f8dda82ae342d649.js",
+  "precache-manifest.b195ba75d7b4361fdf7060c1b607fd5d.js": "/products-app/precache-manifest.b195ba75d7b4361fdf7060c1b607fd5d.js",
   "service-worker.js": "/products-app/service-worker.js"
 }
