@@ -1,0 +1,13 @@
+{
+  "main.css": "/products-app/static/css/main.5118c8a3.chunk.css",
+  "main.js": "/products-app/static/js/main.6989759f.chunk.js",
+  "main.js.map": "/products-app/static/js/main.6989759f.chunk.js.map",
+  "static/js/1.7f7fa3f5.chunk.js": "/products-app/static/js/1.7f7fa3f5.chunk.js",
+  "static/js/1.7f7fa3f5.chunk.js.map": "/products-app/static/js/1.7f7fa3f5.chunk.js.map",
+  "runtime~main.js": "/products-app/static/js/runtime~main.eabc0d1e.js",
+  "runtime~main.js.map": "/products-app/static/js/runtime~main.eabc0d1e.js.map",
+  "static/css/main.5118c8a3.chunk.css.map": "/products-app/static/css/main.5118c8a3.chunk.css.map",
+  "index.html": "/products-app/index.html",
+  "precache-manifest.c3a833be76472817708d8a314bf2f08c.js": "/products-app/precache-manifest.c3a833be76472817708d8a314bf2f08c.js",
+  "service-worker.js": "/products-app/service-worker.js"
+}
