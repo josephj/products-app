@@ -2,7 +2,7 @@
   "name": "products-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://josephj.github.io/product-list",
+  "homepage": "https://josephj.github.io/products-app",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.1.0",
