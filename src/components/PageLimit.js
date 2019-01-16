@@ -36,7 +36,7 @@ const Select = styled.select`
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  padding-right: 10px;
+  padding-right: 15px;
   position: relative;
   z-index: 1;
   outline: 0;

@@ -43,7 +43,7 @@ export class ProductList extends Component {
         <Header>
           <div>
             <Title>All Products</Title>
-            <Info>24 Products</Info>
+            <Info>{total} Products</Info>
           </div>
           <div style={{ marginLeft: 'auto' }}>
             <PageLimit value={limit} onChange={onLimitChange} />
