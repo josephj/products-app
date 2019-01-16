@@ -69,9 +69,9 @@ export class ProductList extends Component {
         </List>
         <Footer>
           <Pager
-            total={total}
+            page={page}
             limit={limit}
-            value={page}
+            total={total}
             onChange={onPageChange}
           />
         </Footer>
@@ -91,7 +91,6 @@ const Header = styled.div`
 `;
 const Title = styled.h1`
   color: #666;
-  font-family: 'Raleway', sans-serif;
   font-size: 20px;
   font-weight: bold;
   margin: 0 0 5px;
