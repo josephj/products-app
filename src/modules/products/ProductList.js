@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import connectStore from './connectStore';
-import { Pager, PageLimit } from '../../components';
 import styled from 'styled-components';
+import { Grid, GridCell, Pager, PageLimit } from '../../components';
+import connectStore from './connectStore';
+import Item from './Item';
 
 export class ProductList extends Component {
   static propTypes = {
@@ -49,24 +50,13 @@ export class ProductList extends Component {
             <PageLimit value={limit} onChange={onLimitChange} />
           </div>
         </Header>
-        <List>
+        <Grid>
           {data.map(product => (
-            <Item key={product.id}>
-              <ItemWrapper>
-                <ItemMedia>
-                  <Img src={product.product_image} alt="Product" />
-                </ItemMedia>
-                <ItemInfo>
-                  <b style={{ color: '#666' }}>{product.product_name}</b>
-                  <br />
-                  {product.description}
-                  <br />
-                  <b>{product.price}</b>
-                </ItemInfo>
-              </ItemWrapper>
-            </Item>
+            <GridCell key={product.id}>
+              <Item {...product} />
+            </GridCell>
           ))}
-        </List>
+        </Grid>
         <Footer>
           <Pager
             page={page}
@@ -81,7 +71,6 @@ export class ProductList extends Component {
 }
 
 const Wrapper = styled.div``;
-
 const Header = styled.div`
   align-items: flex-end;
   border-bottom: solid 1px #eaeaea;
@@ -98,48 +87,6 @@ const Title = styled.h1`
 const Info = styled.div`
   color: #999;
   font-size: 13px;
-`;
-const List = styled.ul`
-  margin: 0 -10px 0 0;
-  padding: 0;
-  list-style-type: none;
-  &:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
-`;
-const Item = styled.li`
-  display: inline-block;
-  width: 25%;
-`;
-const ItemWrapper = styled.div`
-  background: #fff;
-  border: solid 1px #eaeaea;
-  margin: 0 10px 10px 0;
-  height: 280px;
-`;
-const ItemMedia = styled.div`
-  padding: 12px 15px 8px;
-  text-align: center;
-`;
-const ItemInfo = styled.div`
-  border-top: solid 1px #f2f2f2;
-  font-size: 13px;
-  line-height: 1.4;
-  padding: 10px 15px;
-  text-align: left;
-  // TODO
-  white-space: nowrap;
-  overflow: hidden;
-  width: 90%;
-  text-overflow: ellipsis;
-`;
-const Img = styled.img`
-  display: inline-block;
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
 `;
 const Footer = styled.div`
   display: flex;
