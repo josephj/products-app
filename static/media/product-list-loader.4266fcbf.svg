@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  viewBox="0 0 800 640">
+  <defs>
+    <symbol id="box">
+      <g>
+        <rect rx="1" ry="1" width="193" height="188" fill="#fff" stroke="#eee"/>
+        <rect width="120" height="120" x="36.5" y="10" fill="#fff"/>
+        <line x1="0" y1="139" x2="193" y2="139" stroke="#efefef" style="stroke-width: 0.5px;" />
+        <rect x="8" y="147" rx="2" ry="2" width="84" height="8" fill="#eee" />
+        <rect x="8" y="160" rx="2" ry="2" width="120" height="8" fill="#eee" />
+        <rect x="8" y="173" rx="2" ry="2" width="40" height="8" fill="#eee" />
+      </g>
+    </symbol>
+  </defs>
+  <rect x="0" y="6" rx="2" ry="2" width="84" height="12" fill="#ddd" />
+  <rect x="0" y="24" rx="2" ry="2" width="72" height="8" fill="#ddd" />
+  <rect x="728" y="22" rx="2" ry="2" width="72" height="10" fill="#ddd" />
+  <rect x="0" y="36" rx="0" ry="0" width="800" height="1" fill="#eee" />
+  <use xlink:href="#box" x="0" y="46" />
+  <use xlink:href="#box" x="202" y="46" />
+  <use xlink:href="#box" x="404" y="46" />
+  <use xlink:href="#box" x="606" y="46" />
+  <use xlink:href="#box" x="0" y="242" />
+  <use xlink:href="#box" x="202" y="242" />
+  <use xlink:href="#box" x="404" y="242" />
+  <use xlink:href="#box" x="606" y="242" />
+  <rect x="610" y="444" rx="2" ry="2" width="184" height="12" fill="#ddd" />
+</svg>
