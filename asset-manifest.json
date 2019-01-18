@@ -1,16 +1,16 @@
 {
-  "main.css": "/products-app/static/css/main.33110411.chunk.css",
-  "main.js": "/products-app/static/js/main.db58e47d.chunk.js",
-  "main.js.map": "/products-app/static/js/main.db58e47d.chunk.js.map",
-  "static/js/1.0cf68922.chunk.js": "/products-app/static/js/1.0cf68922.chunk.js",
-  "static/js/1.0cf68922.chunk.js.map": "/products-app/static/js/1.0cf68922.chunk.js.map",
+  "main.css": "/products-app/static/css/main.9fdc2b80.chunk.css",
+  "main.js": "/products-app/static/js/main.76e73621.chunk.js",
+  "main.js.map": "/products-app/static/js/main.76e73621.chunk.js.map",
+  "static/js/1.1f77d757.chunk.js": "/products-app/static/js/1.1f77d757.chunk.js",
+  "static/js/1.1f77d757.chunk.js.map": "/products-app/static/js/1.1f77d757.chunk.js.map",
   "runtime~main.js": "/products-app/static/js/runtime~main.eabc0d1e.js",
   "runtime~main.js.map": "/products-app/static/js/runtime~main.eabc0d1e.js.map",
-  "static/css/main.33110411.chunk.css.map": "/products-app/static/css/main.33110411.chunk.css.map",
+  "static/css/main.9fdc2b80.chunk.css.map": "/products-app/static/css/main.9fdc2b80.chunk.css.map",
   "static/media/caret-down.98dd839c.svg": "/products-app/static/media/caret-down.98dd839c.svg",
   "static/media/spinner.89ed9d74.svg": "/products-app/static/media/spinner.89ed9d74.svg",
   "static/media/cloud-offline.c18d309c.svg": "/products-app/static/media/cloud-offline.c18d309c.svg",
   "index.html": "/products-app/index.html",
-  "precache-manifest.a2b6274c4fd528250766569f703ff973.js": "/products-app/precache-manifest.a2b6274c4fd528250766569f703ff973.js",
+  "precache-manifest.c33e018b7ff8fab936f328398f4c659e.js": "/products-app/precache-manifest.c33e018b7ff8fab936f328398f4c659e.js",
   "service-worker.js": "/products-app/service-worker.js"
 }
