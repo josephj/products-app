@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, GridCell, Pager, PageLimit } from '../../components';
+import { ReactComponent as Loader } from '../../svgs/product-list-loader.svg';
 import connectStore from './connectStore';
 import Item from './Item';
 
@@ -32,6 +33,7 @@ export class ProductList extends Component {
   render() {
     const {
       data,
+      isLoading,
       limit,
       page,
       total,
@@ -39,8 +41,15 @@ export class ProductList extends Component {
       onPageChange
     } = this.props;
 
+    const isInitLoading = !data.length && isLoading;
+    console.log(data.length, isLoading);
+
+    if (isInitLoading) {
+      return <Loader />;
+    }
+
     return (
-      <Wrapper>
+      <div>
         <Header>
           <div>
             <Title>All Products</Title>
@@ -65,12 +74,11 @@ export class ProductList extends Component {
             onChange={onPageChange}
           />
         </Footer>
-      </Wrapper>
+      </div>
     );
   }
 }
 
-const Wrapper = styled.div``;
 const Header = styled.div`
   align-items: flex-end;
   border-bottom: solid 1px #eaeaea;

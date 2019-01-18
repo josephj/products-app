@@ -41,7 +41,7 @@ export default combineReducers({
   meta: combineReducers({
     isLoading: handleActions(
       {
-        [retrieveProducts]: () => true,
+        [retrieveProductsStart]: () => true,
         [retrieveProductsComplete]: () => false
       },
       defaultState.meta.isLoading
