@@ -11,7 +11,7 @@ export class ProductList extends Component {
     data: PropTypes.array,
     isLoading: PropTypes.bool,
     page: PropTypes.number,
-    limit: PropTypes.number,
+    limit: PropTypes.oneOf([4, 8, 12, 24, 48, 96, 198]),
     total: PropTypes.number,
     onWillMount: PropTypes.func,
     onLimitChange: PropTypes.func,
@@ -25,7 +25,7 @@ export class ProductList extends Component {
     total: 0,
     onWillMount: () => {},
     onLimitChange: () => {},
-    onPagechange: () => {}
+    onPageChange: () => {}
   };
   componentWillMount() {
     this.props.onWillMount();
@@ -42,8 +42,6 @@ export class ProductList extends Component {
     } = this.props;
 
     const isInitLoading = !data.length && isLoading;
-    console.log(data.length, isLoading);
-
     if (isInitLoading) {
       return <Loader />;
     }
@@ -55,13 +53,13 @@ export class ProductList extends Component {
             <Title>All Products</Title>
             <Info>{total} Products</Info>
           </div>
-          <div style={{ marginLeft: 'auto' }}>
+          <div>
             <PageLimit value={limit} onChange={onLimitChange} />
           </div>
         </Header>
         <Grid>
-          {data.map(product => (
-            <GridCell key={product.id}>
+          {data.map((product, i) => (
+            <GridCell key={i}>
               <Item {...product} />
             </GridCell>
           ))}
@@ -85,6 +83,9 @@ const Header = styled.div`
   display: flex;
   padding: 5px 6px;
   margin: 0 0 15px;
+  > div:last-child {
+    margin-left: auto;
+  }
 `;
 const Title = styled.h1`
   color: #666;
