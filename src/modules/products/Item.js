@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Img from 'react-image';
+import PropTypes from 'prop-types';
 import styled, { keyframes, css } from 'styled-components';
 import { ReactComponent as IconOffline } from '../../svgs/cloud-offline.svg';
 import { ReactComponent as IconSpinner } from '../../svgs/spinner.svg';
 
-export default ({ product_image, product_name, description, price }) => (
-  <Wrapper>
-    <Media>
-      <StyledImg
-        src={product_image}
-        alt={`Image of ${product_name}`}
-        loader={
-          <Indicator spin>
-            <IconSpinner viewBox="-200 -200 500 500" />
-          </Indicator>
-        }
-        unloader={
-          <Indicator>
-            <IconOffline viewBox="-200 -200 500 500" />
-          </Indicator>
-        }
-      />
-    </Media>
-    <Text>
-      <Name as="h2">{product_name}</Name>
-      <Desc as="p">{description}</Desc>
-      <Price>{price}</Price>
-    </Text>
-  </Wrapper>
-);
+const Icon = ({ spin, IconComponent }) => {
+  return (
+    <Indicator spin={spin}>
+      <IconComponent viewBox="-200 -200 500 500" />
+    </Indicator>
+  );
+};
+
+export default class Item extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired
+  };
+  render() {
+    const {
+      data: { product_image, product_name, description, price }
+    } = this.props;
+    return (
+      <Wrapper>
+        <Media>
+          <Img
+            src={product_image}
+            alt={`Image of ${product_name}`}
+            loader={<Icon IconComponent={IconSpinner} spin />}
+            unloader={<Icon IconComponent={IconOffline} />}
+          />
+        </Media>
+        <Text>
+          <Name as="h2">{product_name}</Name>
+          <Desc as="p">{description}</Desc>
+          <Price>{price}</Price>
+        </Text>
+      </Wrapper>
+    );
+  }
+}
 
 const Wrapper = styled.div`
   background: #fff;
@@ -38,6 +49,12 @@ const Wrapper = styled.div`
 const Media = styled.div`
   padding: 12px 15px 8px;
   text-align: center;
+  img {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+  }
 `;
 const spin = keyframes`
   from {
@@ -64,12 +81,6 @@ const Indicator = styled.span`
     width: 180px;
     height: 180px;
   }
-`;
-const StyledImg = styled(Img)`
-  display: inline-block;
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
 `;
 const Text = styled.div`
   border-top: solid 1px #f2f2f2;

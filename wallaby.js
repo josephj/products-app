@@ -26,7 +26,17 @@ module.exports = function(wallaby) {
     },
     compilers: {
       '**/*.js': wallaby.compilers.babel({
-        presets: ['react-app']
+        presets: ['react-app'],
+        plugins: [
+          [
+            'styled-components',
+            {
+              ssr: true,
+              fileName: false,
+              displayName: true
+            }
+          ]
+        ]
       })
     },
     setup: wallaby => {

@@ -26,7 +26,7 @@ describe('<ProductList/>', () => {
   //============
   it('renders limit select', () => {
     const data = [{}];
-    const wrapper = mount(<ProductList data={data} limit={8} total={1} />);
+    const wrapper = shallow(<ProductList data={data} limit={8} total={1} />);
     expect(wrapper.find(PageLimit)).toBeTruthy();
     expect(wrapper.find(PageLimit).props().value).toEqual(8);
     wrapper.setProps({ limit: 48 });
