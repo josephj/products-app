@@ -60,7 +60,7 @@ export class ProductList extends Component {
         <Grid>
           {data.map((product, i) => (
             <GridCell key={i}>
-              <Item {...product} />
+              <Item data={product} />
             </GridCell>
           ))}
         </Grid>
