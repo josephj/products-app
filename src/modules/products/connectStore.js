@@ -24,8 +24,8 @@ const mergeProps = (stateProps, dispatchProps) => {
   return {
     ...stateProps,
     onWillMount: () => retrieveProducts(),
-    onLimitChange: e => setLimit(parseInt(e.target.value, 10)),
-    onPageChange: val => setPage(val, 10)
+    onLimitChange: val => setLimit(val),
+    onPageChange: val => setPage(val)
   };
 };
 

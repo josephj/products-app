@@ -6,14 +6,17 @@ export default ({ onChange, value, ...otherProps }) => {
   const sizes = [4, 8, 12, 24, 48, 96, 198];
   return (
     <Wrapper>
-      <Select value={value} onChange={onChange} {...otherProps}>
+      <Select
+        value={value}
+        onChange={e => onChange(parseInt(e.target.value, 10))}
+        {...otherProps}>
         {sizes.map((size, i) => (
           <option key={i} value={size}>
             {size} per page
           </option>
         ))}
       </Select>
-      <IconCaret width="13" height="13" viewBox="6 6 12 12" />
+      <Icon />
     </Wrapper>
   );
 };
@@ -21,12 +24,14 @@ export default ({ onChange, value, ...otherProps }) => {
 const Wrapper = styled.span`
   display: inline-block;
   position: relative;
-  svg {
-    position: absolute;
-    right: 0;
-    top: calc(50% - 13px / 2);
-    z-index: 0;
-  }
+`;
+const Icon = styled(IconCaret).attrs({ viewBox: '6 6 12 12' })`
+  height: 13px;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 13px / 2);
+  z-index: 0;
+  width: 13px;
 `;
 const Select = styled.select`
   appearance: none;

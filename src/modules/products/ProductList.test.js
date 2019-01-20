@@ -47,7 +47,7 @@ describe('<ProductList/>', () => {
       .find(PageLimit)
       .find('select')
       .simulate('change', { target: { value: 24 } });
-    expect(onLimitChange).toHaveBeenCalled();
+    expect(onLimitChange).toHaveBeenCalledWith(24);
   });
   //============
   // Pagination
