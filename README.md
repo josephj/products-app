@@ -3,40 +3,75 @@ Product App
 
 [![CircleCI](https://circleci.com/gh/josephj/products-app.svg?style=svg)](https://circleci.com/gh/josephj/products-app)
 
-# Links
+## Demo
 
-* [Demo](https://josephj.github.io/products-app)
+* [GitHub Pages](https://josephj.github.io/products-app)
 * [CodeSandbox](https://codesandbox.io/s/github/josephj/products-app)
 
 ![](https://d.pr/i/JjVFwL+)
 
-# Installation
+## Installation
 
 ```
 yarn
-yarn test
+CI=1 yarn test
 yarn start
 ```
 
-# Tasks
+## Tasks
 
 * ✅ Request a list of products from a JSON REST api
 * ✅ Render results to page as per the UI (Find ProductListing.png in the repository)
 * ✅ Add ability to paginate the collection (Items per page needs to be configurable)
 
-# Requirements
+## Requirements
 
 * ✅ Redux for state management
+  * Using `redux-thunk` middleware.
 * ✅ React Router 4
+  * Currently it's only a single page so that I use `<Redirect/>` to redirect the non-existing routes.
 * ✅ Good component structure
+  * It really depends on reviewer's preference. I agree and follow the modular approach which is proposed in the "[Three Rules for Structuring (Redux) Applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/#rule-1-organize-by-feature)" blog post.
 * ✅ Should be responsive
+  * Implemented 5 breakpoints in `src/components/utils.js` so that all components can make use of it.
 * ✅ Good code quality
+  * Also a subjective requirement. However, this one is easier since we can integrate SaaS tools like CodeClimate or codebeat.
 * ✅ ES6 +
+  * Definitely! 💪
 * ⛏ High Test coverage
+  * Continue working on this one 😅
 
-# Details
+## Details
 
-## File & Folder Structure
+### File & Folder Structure
+
+```
+src
+├── App.js
+├── App.test.js
+├── apis
+│   ├── index.js
+│   └── products.js
+├── components
+│   ├── Grid.js
+│   ├── PageLimit.js
+│   ├── Pager.js
+│   ├── README.md
+│   ├── index.js
+│   └── utils.js
+├── configureStore.js
+├── index.css
+├── index.js
+├── modules
+│   └── products
+├── reducer.js
+├── setupTests.js
+└── svgs
+    ├── caret-down.svg
+    ├── cloud-offline.svg
+    ├── product-list-loader.svg
+    └── spinner.svg
+```
 
 * `src/components` - Pure reusable UI components.
 * `src/components/index.js` - The index for all public avaiable UI components.
@@ -50,9 +85,19 @@ yarn start
 * `modules/products/connectStore.js` - HoC which handles the `mapStateToProps`, `mapDispatchToProps` and `mergeProps`. The major benefit is that the component doesn't need to know the existence of redux.
 * `svgs` - Icons and the content loader.
 
-## Redux
+### Redux
 
-### Store
+I use Ducks pattern and `redux-acions`.
+
+#### Actions
+
+* `retrieveProducts`
+* `retrieveProductsStart`
+* `retrieveProductsComplete`
+* `setLimit`
+* `setPage`
+
+#### Store
 
 ```js
 {
@@ -63,21 +108,18 @@ yarn start
       limit: 8
       page: 1,
     }
-
   }
 }
 ```
 
-## Testing
+### Testing
 
-* wallaby.js
+* Wallaby.js
 * CircleCI
-* TestCafe
 
-# Thoughts
+## Thoughts
 
 (any shortcomings and concerns that you encountered during the process, though this is not a mandatory requirement, it helps us better understand your thought process.)
-
 
 
 
