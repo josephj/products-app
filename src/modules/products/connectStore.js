@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { retrieveProducts, setLimit, setPage } from './redux';
 
-const mapStateToProps = store => {
+export const mapStateToProps = store => {
   const {
     data,
     meta,
@@ -16,10 +16,16 @@ const mapStateToProps = store => {
     ...meta
   };
 };
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ retrieveProducts, setLimit, setPage }, dispatch);
+export const mapDispatchToProps = (dispatch, actionCreators) => {
+  // Dependency injection for unit test
+  actionCreators = actionCreators || {
+    retrieveProducts,
+    setLimit,
+    setPage
+  };
+  return bindActionCreators(actionCreators, dispatch);
 };
-const mergeProps = (stateProps, dispatchProps) => {
+export const mergeProps = (stateProps, dispatchProps) => {
   const { retrieveProducts, setLimit, setPage } = dispatchProps;
   return {
     ...stateProps,
