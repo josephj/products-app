@@ -16,7 +16,8 @@ export const mapStateToProps = store => {
     ...meta
   };
 };
-export const mapDispatchToProps = (dispatch, actionCreators) => {
+
+export const mapDispatchToProps = (dispatch, ownProps, actionCreators) => {
   // Dependency injection for unit test
   actionCreators = actionCreators || {
     retrieveProducts,
@@ -25,6 +26,7 @@ export const mapDispatchToProps = (dispatch, actionCreators) => {
   };
   return bindActionCreators(actionCreators, dispatch);
 };
+
 export const mergeProps = (stateProps, dispatchProps) => {
   const { retrieveProducts, setLimit, setPage } = dispatchProps;
   return {

@@ -1,4 +1,8 @@
-import {
+import { mount } from 'enzyme';
+import React from 'react';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import connectStore, {
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
@@ -31,7 +35,11 @@ describe('connectStore', () => {
         foo: () => {},
         bar: () => {}
       };
-      const boundActionCreators = mapDispatchToProps(dispatch, actionCreators);
+      const boundActionCreators = mapDispatchToProps(
+        dispatch,
+        {},
+        actionCreators
+      );
       boundActionCreators.foo();
       boundActionCreators.bar();
       expect(dispatch).toBeCalledTimes(2);
@@ -66,5 +74,45 @@ describe('connectStore', () => {
       result.onPageChange(2);
       expect(dispatchProps.setPage).toHaveBeenCalledWith(2);
     });
+  });
+});
+
+// Integration test for the HoC component
+describe('connectStore', () => {
+  it('appends props to assigned component', () => {
+    const store = configureStore()({
+      products: {
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        meta: {
+          page: 1,
+          limit: 10
+        }
+      }
+    });
+    const Foo = ({
+      data,
+      total,
+      limit,
+      page,
+      onLimitChange,
+      onWillMount,
+      onPageChange
+    }) => {
+      expect(page).toEqual(1);
+      expect(limit).toEqual(10);
+      expect(total).toEqual(15);
+      expect(data).toHaveLength(10);
+      expect(onLimitChange).toBeInstanceOf(Function);
+      expect(onWillMount).toBeInstanceOf(Function);
+      expect(onPageChange).toBeInstanceOf(Function);
+
+      return null;
+    };
+    const ConnectedFoo = connectStore(Foo);
+    mount(
+      <Provider store={store}>
+        <ConnectedFoo />
+      </Provider>
+    );
   });
 });
