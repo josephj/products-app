@@ -18,12 +18,12 @@ export const retrieveProductsStart = createAction(
   `${PREFIX}/RETRIEVE_PRODUCTS_START`
 );
 export const retrieveProductsComplete = createAction(
-  `${PREFIX}/RECEIVE_PRODUCTS_COMPLETE`
+  `${PREFIX}/RETRIEVE_PRODUCTS_COMPLETE`
 );
 export const setLimit = createAction(`${PREFIX}/SET_LIMIT`);
 export const setPage = createAction(`${PREFIX}/SET_PAGE`);
 
-const defaultState = {
+export const defaultState = {
   data: [],
   meta: {
     isLoading: false,
@@ -32,32 +32,37 @@ const defaultState = {
   }
 };
 
+export const dataReducer = handleAction(
+  retrieveProductsComplete,
+  (state, { payload }) => payload,
+  defaultState.data
+);
+export const isLoadingReducer = handleActions(
+  {
+    [retrieveProductsStart]: () => true,
+    [retrieveProductsComplete]: () => false
+  },
+  defaultState.meta.isLoading
+);
+export const pageReducer = handleActions(
+  {
+    [setPage]: (state, { payload }) => payload,
+    [setLimit]: () => 1
+  },
+  defaultState.meta.page
+);
+export const limitReducer = handleActions(
+  {
+    [setLimit]: (state, { payload }) => payload
+  },
+  defaultState.meta.limit
+);
+
 export default combineReducers({
-  data: handleAction(
-    retrieveProductsComplete,
-    (state, { payload }) => payload,
-    defaultState.data
-  ),
+  data: dataReducer,
   meta: combineReducers({
-    isLoading: handleActions(
-      {
-        [retrieveProductsStart]: () => true,
-        [retrieveProductsComplete]: () => false
-      },
-      defaultState.meta.isLoading
-    ),
-    page: handleActions(
-      {
-        [setPage]: (state, { payload }) => payload,
-        [setLimit]: () => 1
-      },
-      defaultState.meta.page
-    ),
-    limit: handleActions(
-      {
-        [setLimit]: (state, { payload }) => payload
-      },
-      defaultState.meta.limit
-    )
+    isLoading: isLoadingReducer,
+    page: pageReducer,
+    limit: limitReducer
   })
 });
