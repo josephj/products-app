@@ -1,7 +1,7 @@
 Product App
 ============
 
-[![CircleCI](https://circleci.com/gh/josephj/products-app.svg?style=svg)](https://circleci.com/gh/josephj/products-app)
+[![CircleCI](https://circleci.com/gh/josephj/products-app.svg?style=svg&circle-token=bcdef15c903cd65ee0a0153d996f5b1d3e32ba71)](https://circleci.com/gh/josephj/products-app)
 
 ## Demo
 
