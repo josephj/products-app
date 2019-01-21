@@ -1,7 +1,7 @@
 {
   "main.css": "/products-app/static/css/main.33110411.chunk.css",
-  "main.js": "/products-app/static/js/main.4cfe3c1d.chunk.js",
-  "main.js.map": "/products-app/static/js/main.4cfe3c1d.chunk.js.map",
+  "main.js": "/products-app/static/js/main.e3b7297c.chunk.js",
+  "main.js.map": "/products-app/static/js/main.e3b7297c.chunk.js.map",
   "static/js/1.e14e0286.chunk.js": "/products-app/static/js/1.e14e0286.chunk.js",
   "static/js/1.e14e0286.chunk.js.map": "/products-app/static/js/1.e14e0286.chunk.js.map",
   "runtime~main.js": "/products-app/static/js/runtime~main.eabc0d1e.js",
@@ -12,6 +12,6 @@
   "static/media/product-list-loader.4266fcbf.svg": "/products-app/static/media/product-list-loader.4266fcbf.svg",
   "static/css/main.33110411.chunk.css.map": "/products-app/static/css/main.33110411.chunk.css.map",
   "index.html": "/products-app/index.html",
-  "precache-manifest.65f1e707e1aeb2ac5629ddc2f433a8bc.js": "/products-app/precache-manifest.65f1e707e1aeb2ac5629ddc2f433a8bc.js",
+  "precache-manifest.0f1435ae4d2d508cae13a745739f93a1.js": "/products-app/precache-manifest.0f1435ae4d2d508cae13a745739f93a1.js",
   "service-worker.js": "/products-app/service-worker.js"
 }
