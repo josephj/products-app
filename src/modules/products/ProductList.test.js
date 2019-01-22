@@ -66,7 +66,7 @@ describe('<ProductList/>', () => {
   });
   it('renders pagination with 1000 items at page #50', () => {
     const total = 1000;
-    const data = Array(total).map(() => ({}));
+    const data = [...Array(total)].map(() => ({}));
     const wrapper = mount(
       <ProductList
         data={data}
@@ -84,9 +84,9 @@ describe('<ProductList/>', () => {
     expect(pageItems.at(3).text()).toEqual('51');
     expect(pageItems.last().text()).toEqual('Next page >');
   });
-  it('triggers onChangeChange', () => {
+  it('triggers onChange', () => {
     const total = 50;
-    const data = Array(total).map(() => ({}));
+    const data = [...Array(total)].map(() => ({}));
     const onPageChange = jest.fn();
     const wrapper = mount(
       <ProductList
@@ -98,10 +98,9 @@ describe('<ProductList/>', () => {
       />
     );
     wrapper
-      .find('Footer li')
+      .find('Footer Link')
       .at(1) // first page
-      .simulate('click');
-    expect(onPageChange).toHaveBeenCalled();
+      .simulate('click', { preventDefault() {} });
     expect(onPageChange).toBeCalledWith(1);
   });
 });
