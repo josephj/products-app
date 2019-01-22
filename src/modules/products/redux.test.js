@@ -33,11 +33,12 @@ describe('modules/products/redux', () => {
   });
   it('#retrieveProducts - error', async () => {
     ProductsAPI.retrieve = jest.fn().mockImplementation(() => {
-      return Promise.reject('totally broken');
+      return Promise.reject(new Error('totally broken'));
     });
     await store.dispatch(retrieveProducts());
     const actions = store.getActions();
     expect(actions[0]).toEqual({ type: retrieveProductsStart.toString() });
+    // TODO - Mock not working, not sure why
     // expect(actions[1]).toEqual({
     //   type: retrieveProductsComplete.toString(),
     //   payload: 'totaly broken'

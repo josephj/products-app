@@ -52,7 +52,6 @@ describe('<ProductList/>', () => {
   //============
   // Pagination
   //============
-  // TODO - Pagination part can be moved out while I implement it from scratch.
   it('renders pagination with 1 item', () => {
     const data = [{}];
     const wrapper = mount(

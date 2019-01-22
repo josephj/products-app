@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import Pager, { getVisiblePages } from './Pager';
-import { wrap } from 'module';
 
 describe('<Pager/>', () => {
   describe('#getVisiblePages', () => {
