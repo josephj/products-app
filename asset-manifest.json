@@ -1,9 +1,9 @@
 {
   "main.css": "/products-app/static/css/main.69d38217.chunk.css",
-  "main.js": "/products-app/static/js/main.9f0bc03f.chunk.js",
-  "main.js.map": "/products-app/static/js/main.9f0bc03f.chunk.js.map",
-  "static/js/1.d631d18b.chunk.js": "/products-app/static/js/1.d631d18b.chunk.js",
-  "static/js/1.d631d18b.chunk.js.map": "/products-app/static/js/1.d631d18b.chunk.js.map",
+  "main.js": "/products-app/static/js/main.4354398b.chunk.js",
+  "main.js.map": "/products-app/static/js/main.4354398b.chunk.js.map",
+  "static/js/1.4edc2836.chunk.js": "/products-app/static/js/1.4edc2836.chunk.js",
+  "static/js/1.4edc2836.chunk.js.map": "/products-app/static/js/1.4edc2836.chunk.js.map",
   "runtime~main.js": "/products-app/static/js/runtime~main.eabc0d1e.js",
   "runtime~main.js.map": "/products-app/static/js/runtime~main.eabc0d1e.js.map",
   "static/media/caret-down.98dd839c.svg": "/products-app/static/media/caret-down.98dd839c.svg",
@@ -12,6 +12,6 @@
   "static/media/product-list-loader.4266fcbf.svg": "/products-app/static/media/product-list-loader.4266fcbf.svg",
   "static/css/main.69d38217.chunk.css.map": "/products-app/static/css/main.69d38217.chunk.css.map",
   "index.html": "/products-app/index.html",
-  "precache-manifest.e30eb9ee281c6247a6daaf6f5a0601c7.js": "/products-app/precache-manifest.e30eb9ee281c6247a6daaf6f5a0601c7.js",
+  "precache-manifest.3d122587a9639df3d3db8a4297018f13.js": "/products-app/precache-manifest.3d122587a9639df3d3db8a4297018f13.js",
   "service-worker.js": "/products-app/service-worker.js"
 }
