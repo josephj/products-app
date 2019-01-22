@@ -6,7 +6,6 @@ Product App
 ## Demo
 
 * [GitHub Pages](https://josephj.github.io/products-app)
-* [CodeSandbox](https://codesandbox.io/s/github/josephj/products-app)
 
 ![](https://d.pr/i/JjVFwL+)
 
@@ -172,7 +171,7 @@ Definitely! How can I live without ES6+ nowadays! 💪
 
 ## Requirement 7 - High Test coverage
 
-Using `Jest` and `enzyme` for unit and integration tests.
+Using `Jest` and `enzyme` for unit and integration tests. I also make use of the Wallaby.js so that I don't have to run `yarn test` all the way with me. 
 
 ![](https://d.pr/i/LSPr8o+)
 
