@@ -19,3 +19,9 @@ export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
     `;
   return accumulator;
 }, {});
+
+media.huge = (...args) => css`
+  @media (min-width: 1441px) {
+    ${css(args)};
+  }
+`;
